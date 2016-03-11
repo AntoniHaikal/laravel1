@@ -16,4 +16,9 @@ class ExampleTest extends TestCase
         $this->visit('/')
              ->see('Laravel 5');
     }
+    public function testGetProducts()
+    {
+        $this->get(route('api.products.index'))
+             ->assertResponseOk();
+    }
 }
